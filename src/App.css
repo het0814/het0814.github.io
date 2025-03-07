@@ -1,44 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --primary-color: #ffffff; 
+  --secondary-color: #ff00ff; 
+  --background-color: #000000; 
+  --text-color: #e0e0e0; 
+  --border-color: #333;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Space Mono', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
   line-height: 1.6;
 }
 
-nav {
-  background: #333;
-  color: #fff;
-  padding: 1rem 0;
-  text-align: center;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-section {
-  padding: 2rem;
-  margin: 1rem 0;
-}
-
-h1, h2 {
-  color: #333;
-}
-
-p {
-  color: #666;
-}
 
 #hero {
   height: 100vh;
@@ -47,29 +25,101 @@ p {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: #f4f4f4;
+  background: linear-gradient(to bottom, var(--background-color), #111);
+  border-bottom: 1px solid var(--border-color);
 }
 
 #hero h1 {
   font-size: 3rem;
   margin: 0;
+  color: var(--primary-color);
+  white-space: pre-wrap;
 }
 
 #hero p {
   font-size: 1.5rem;
+  margin: 0.5rem 0;
+  color: var(--text-color);
 }
 
 #hero div {
   margin-top: 1rem;
 }
 
-#hero a {
+a {
   margin: 0 10px;
   text-decoration: none;
-  color: #333;
+  color: var(--primary-color);
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-#about, #experience, #projects, #technical-skills, #contact {
-  padding: 2rem;
-  background: #fff;
+a:hover {
+  color: var(--secondary-color);
+}
+
+section {
+  padding: 4rem 2rem;
+  margin: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+section h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+section p {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+section ul {
+  list-style: none;
+  padding: 0;
+}
+
+section ul li {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+section ul li strong {
+  color: var(--primary-color);
+}
+
+section {
+  position: relative;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid var(--primary-color);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+section:hover::before {
+  opacity: 1;
+}
+
+.cursor {
+  color: var(--primary-color);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
 }
