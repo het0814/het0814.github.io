@@ -69,7 +69,7 @@ p {
   color: #333;
 }
 
-#about {
+#about, #experience, #projects, #technical-skills, #contact {
   padding: 2rem;
   background: #fff;
 }
