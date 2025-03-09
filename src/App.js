@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Hero from './components/Hero';
-import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import TechnicalSkills from './components/TechnicalSkills';
@@ -29,10 +28,9 @@ function App() {
   return (
     <div>
       <Hero />
-      <About />
       <Experience />
-      <Projects />
       <TechnicalSkills />
+      <Projects />
       <Contact />
     </div>
   );

@@ -25,12 +25,19 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(to bottom, var(--background-color), #111);
+  background:var(--background-color);
   border-bottom: 1px solid var(--border-color);
 }
 
 #hero h1 {
-  font-size: 3rem;
+  font-size: 6rem;
+  margin: 0;
+  color: var(--primary-color);
+  white-space: pre-wrap;
+}
+
+#hero h2 {
+  font-size: 1rem;
   margin: 0;
   color: var(--primary-color);
   white-space: pre-wrap;
@@ -44,6 +51,28 @@ body {
 
 #hero div {
   margin-top: 1rem;
+}
+
+.hero-links {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between icons */
+}
+
+.hero-links a {
+  text-decoration: none;
+  color: #00ffcc; /* Neon cyan */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-links a:hover {
+  color: #ff00ff; /* Neon pink */
+  transform: scale(1.2); /* Slightly enlarge icons on hover */
+}
+
+.icon {
+  font-size: 2rem; /* Adjust icon size */
 }
 
 a {
