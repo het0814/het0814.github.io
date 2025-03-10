@@ -27,6 +27,7 @@ body {
   text-align: center;
   background:var(--background-color);
   border-bottom: 1px solid var(--border-color);
+  margin-top: 60px;
 }
 
 #hero h1 {
@@ -151,4 +152,39 @@ section:hover::before {
   51%, 100% {
     opacity: 0;
   }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 1rem;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: #00ffcc; /* Neon cyan */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar button:hover {
+  color: #ff00ff; /* Neon pink */
 }
