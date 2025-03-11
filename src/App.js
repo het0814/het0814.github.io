@@ -37,7 +37,9 @@ const App = () => {
           <li><button onClick={() => scrollToSection(projectsRef)}>Projects</button></li>
         </ul>
       </nav>
-      <Hero />
+      <div>
+        <Hero />
+      </div>
       <div ref={experienceRef}>
         <Experience />
       </div>
