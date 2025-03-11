@@ -17,7 +17,6 @@ body {
   line-height: 1.6;
 }
 
-
 #hero {
   height: 100vh;
   display: flex;
@@ -25,55 +24,68 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background:var(--background-color);
+  background: var(--background-color);
   border-bottom: 1px solid var(--border-color);
   margin-top: 60px;
+  padding: 5vw; 
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 #hero h1 {
-  font-size: 6rem;
+  font-size: clamp(2rem, 8vw, 6rem);
   margin: 0;
   color: var(--primary-color);
-  white-space: pre-wrap;
+  max-width: 90%; 
+  word-wrap: break-word;
+  text-wrap: balance;
+  white-space: normal; 
 }
 
 #hero h2 {
-  font-size: 1rem;
+  font-size: clamp(1rem, 4vw, 2rem);
   margin: 0;
   color: var(--primary-color);
-  white-space: pre-wrap;
+  max-width: 80%;
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 #hero p {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   margin: 0.5rem 0;
   color: var(--text-color);
+  max-width: 90%;
+  word-wrap: break-word;
+  text-wrap: balance;
+}
+
+.hero-links {
+  margin-top: 2rem;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 600px;
 }
 
 #hero div {
   margin-top: 1rem;
 }
 
-.hero-links {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 20px; /* Space between icons */
-}
-
 .hero-links a {
   text-decoration: none;
-  color: #00ffcc; /* Neon cyan */
+  color: #00ffcc;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .hero-links a:hover {
-  color: #ff00ff; /* Neon pink */
-  transform: scale(1.2); /* Slightly enlarge icons on hover */
+  color: #ff00ff; 
+  transform: scale(1.2); 
 }
 
 .icon {
-  font-size: 2rem; /* Adjust icon size */
+  font-size: 2rem;
 }
 
 a {
@@ -159,7 +171,7 @@ section:hover::before {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+  background: rgba(0, 0, 0, 0.8); 
   padding: 1rem;
   z-index: 1000;
 }
@@ -179,12 +191,68 @@ section:hover::before {
 .navbar button {
   background: none;
   border: none;
-  color: #00ffcc; /* Neon cyan */
+  color: #00ffcc; 
   font-size: 1rem;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .navbar button:hover {
-  color: #ff00ff; /* Neon pink */
+  color: #ff00ff; 
+}
+
+
+
+@media (max-width: 768px) {
+  #hero {
+    padding: 10vw 5vw;
+  }
+
+  #hero h1 {
+    font-size: 5vw;
+  }
+
+  #hero h2 {
+    font-size: 3vw;
+  }
+
+  #hero p {
+    font-size: 2.5vw;
+  }
+
+  .hero-links a {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero {
+    height: auto;
+    padding: 15vw 5vw;
+  }
+
+  #hero h1 {
+    font-size: 7vw;
+    max-width: 100%;
+  }
+
+  #hero h2 {
+    font-size: 4vw;
+    max-width: 100%;
+  }
+
+  #hero p {
+    font-size: 3vw;
+    max-width: 100%;
+  }
+
+  .hero-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-links a {
+    font-size: 1.2rem;
+  }
 }
