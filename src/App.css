@@ -24,7 +24,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: var(--background-color);
+  background-image:url("images/bgImage.png");
+  background-size: cover;
   border-bottom: 1px solid var(--border-color);
   margin-top: 60px;
   padding: 5vw; 

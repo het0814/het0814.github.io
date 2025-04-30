@@ -10,7 +10,8 @@ const Hero = () => {
   const sentences = [
     "Honours Bachelor of Computer Science",
     "Specialty in Data Analytics",
-    "Passionate about Machine Learning",
+    "Passionate about Data Science",
+    "Machine Learning Developer",
     "Experienced in Full-Stack Development",
     "Building innovative solutions",
   ];
@@ -69,20 +70,20 @@ const Hero = () => {
       </h2>
       <div>
         <p>
-          Hi,this is Het. I'm a dedicated and skilled Computer Science student specializing in Data Analytics at Sheridan College. 
+          Hi,this is <strong>Het.</strong> I'm a dedicated and skilled Computer Science student specializing in Data Analytics at Sheridan College. 
           With a strong foundation in programming, data analysis, and machine learning, I am passionate about 
           leveraging technology to solve complex problems and drive data-driven decisions.
         </p>
       </div>
       <div className="hero-links">
+          <a href="mailto:hetkumar.patel1403@gmail.com" aria-label="Email">
+            <FontAwesomeIcon icon={faEnvelope} className="icon" />
+          </a>
           <a href="https://linkedin.com/in/h3t08" aria-label="LinkedIn">
             <FontAwesomeIcon icon={faLinkedin} className="icon" />
           </a>
           <a href="https://github.com/het0814" aria-label="GitHub">
             <FontAwesomeIcon icon={faGithub} className="icon" />
-          </a>
-          <a href="mailto:hetkumar.patel1403@gmail.com" aria-label="Email">
-            <FontAwesomeIcon icon={faEnvelope} className="icon" />
           </a>
       </div>
     </section>
