@@ -54,7 +54,7 @@ body {
 }
 
 #hero p {
-  font-size: clamp(1rem, 2.5vw, 1rem);
+  font-size: clamp(1.1rem, 2.5vw, 1rem);
   margin: 0.5rem 0;
   color: var(--text-color);
   max-width: 100%;
