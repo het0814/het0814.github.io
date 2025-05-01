@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import DPImage from '../images/DPImage.png';
 
 const Hero = () => {
   const [text, setText] = useState('');
@@ -63,16 +64,23 @@ const Hero = () => {
 
   return (
     <section id="hero">
-      <h1>Hetkumar Patel</h1>
+      <h1 style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}> 
+      Hetkumar Patel
+      <img 
+          src={DPImage} 
+          style={{ width: '140px', height: '140px', borderRadius: '30%' }} 
+        />
+      </h1>
       <h2 style={{ color: colors[currentSentenceIndex] }}>
         {text}
         {showCursor && <span className="cursor">|</span>}
       </h2>
       <div>
-        <p>
-          Hi,this is <strong>Het.</strong> I'm a dedicated and skilled Computer Science student specializing in Data Analytics at Sheridan College. 
-          With a strong foundation in programming, data analysis, and machine learning, I am passionate about 
-          leveraging technology to solve complex problems and drive data-driven decisions.
+        <p style={{color : "#A9A9A9"}}>
+          Hi,this is <strong style={{color : "white"}}>Het.</strong><br></br>
+          I'm a dedicated and skilled <strong style={{color : "white"}}>Computer Science</strong> recent graduate with specialization in Data Analytics.<br></br> 
+          With a strong foundation in <strong style={{color : "white"}}>programming, data analysis, </strong>and <strong style={{color : "white"}}>machine learning</strong>.<br></br>
+          I am passionate about leveraging technology to solve complex problems and drive data-driven decisions.
         </p>
       </div>
       <div className="hero-links">
