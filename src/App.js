@@ -44,7 +44,7 @@ const App = () => {
             {/* Header/Navigation Bar - Sticky */}
             <header className="portfolio-header">
                 <h1 className="logo-text" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                    Hetkumar Patel
+                    <strong style={{color : "#FFD700"}}>Het</strong>kumar Patel
                 </h1>
                 <nav className="navbar-links">
                     {navItems.map((item) => (
