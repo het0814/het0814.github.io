@@ -49,7 +49,7 @@ const projectsData = [
         name: "Inventory Management System",
         description: "Developed an inventory tracking system with real-time updates and relational database integration to maintain high levels of inventory accuracy.",
         tech: ["Database", "Full-Stack", "Tracking", "MySQL"],
-        github: "https://github.com/h3t08", // ⬅️ UPDATE THIS LINK
+        github: "https://github.com/het0814", // ⬅️ UPDATE THIS LINK
         live: null
     },
 ];

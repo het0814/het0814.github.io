@@ -8,7 +8,7 @@ const Contact = () => {
             <h2 className="section-title">Get In Touch</h2>
             
             <p className="contact-message">
-                I'm currently seeking roles in **Data Science, AI/ML Development,** or **Data Analytics**. 
+                I'm currently seeking roles in <strong style={{color : "white"}}>Data Science, AI/ML Development,</strong> or <strong style={{color : "white"}}>Data Analytics</strong>. 
                 If you have an opportunity or a project you'd like to discuss, my inbox is always open!
             </p>
             
