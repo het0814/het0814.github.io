@@ -1,20 +1,106 @@
-import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+
+const projectsData = [
+    {
+        name: "ContextIQ: RAG-based Chatbot",
+        description: "Built a full-stack Retrieval-Augmented Generation (RAG) chatbot that ingests documents, URLs, and user inputs to deliver real-time, context-aware responses using vector database retrieval and LLMs.",
+        tech: ["LLMs", "RAG", "VectorDB", "Full-Stack"],
+        github: "https://github.com/your-repo/contextiq", // ⬅️ UPDATE THIS LINK
+        live: "https://live-demo.contextiq.com" // ⬅️ UPDATE THIS LINK
+    },
+    {
+        name: "Climate Change Prediction",
+        description: "Developed a time series forecasting pipeline using machine learning to analyze historical climate data and predict future climate trends, enabling data-driven insights into climate pattern shifts.",
+        tech: ["Time Series", "Machine Learning", "Python", "Forecasting"],
+        github: "https://github.com/your-repo/climate-prediction", // ⬅️ UPDATE THIS LINK
+        live: null
+    },
+    {
+        name: "Synthetic Mobility Data Generation",
+        description: "Developed a CTGAN-based system to generate synthetic mobility data for SUMO simulations, enhancing dataset availability and realism for transportation studies.",
+        tech: ["CTGAN", "Generative AI", "SUMO", "Python"],
+        github: "https://github.com/your-repo/synthetic-data-gen", // ⬅️ UPDATE THIS LINK
+        live: null
+    },
+    {
+        name: "Fleet Management KPI Scorecard",
+        description: "Designed a pipeline to extract and rank Key Performance Indicators (KPIs) from industrial documents using LLMs, BERTopic, and other topic modeling techniques.",
+        tech: ["LLMs", "NLP", "BERTopic", "Topic Modeling"],
+        github: "https://github.com/your-repo/kpi-scorecard", // ⬅️ UPDATE THIS LINK
+        live: null
+    },
+    {
+        name: "SnapCal: Food Image Classifier",
+        description: "Built a Flask-based web application to classify food images and estimate calorie content using a pre-trained Convolutional Neural Network (CNN).",
+        tech: ["Flask", "CNN", "Image Classification", "Web App"],
+        github: "https://github.com/your-repo/snapcal", // ⬅️ UPDATE THIS LINK
+        live: "https://snapcal-demo.netlify.app" // ⬅️ UPDATE THIS LINK
+    },
+    {
+        name: "SCADA Real-Time Dashboard",
+        description: "Implemented a real-time monitoring dashboard for industrial processes using Ignition software for efficient data visualization and process analysis.",
+        tech: ["SCADA", "IIoT", "Ignition", "Real-Time"],
+        github: null, 
+        live: null
+    },
+    {
+        name: "Inventory Management System",
+        description: "Developed an inventory tracking system with real-time updates and relational database integration to maintain high levels of inventory accuracy.",
+        tech: ["Database", "Full-Stack", "Tracking", "MySQL"],
+        github: "https://github.com/your-repo/inventory-system", // ⬅️ UPDATE THIS LINK
+        live: null
+    },
+];
+
+const ProjectCard = ({ name, description, tech, github, live }) => (
+    <div className="project-card">
+        <div className="project-header">
+            <h3 className="project-title">{name}</h3>
+            <div className="project-links">
+                {github && (
+                    <a href={github} target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository" className="project-icon-link">
+                        <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                )}
+                {live && (
+                    <a href={live} target="_blank" rel="noopener noreferrer" aria-label="Live Demo" className="project-icon-link">
+                        <FontAwesomeIcon icon={faExternalLinkAlt} />
+                    </a>
+                )}
+            </div>
+        </div>
+        
+        <p className="project-description">{description}</p>
+        
+        <div className="project-tech-tags">
+            {tech.map((t, index) => (
+                <span key={index} className="tech-tag">{t}</span>
+            ))}
+        </div>
+    </div>
+);
 
 const Projects = () => {
-  return (
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Climate Change Prediction</strong> - Developed a time series forecasting pipeline using machine learning to analyze historical climate data and predict future climate trends, enabling data-driven insights into climate pattern shifts.</li>
-        <li><strong>ContextIQ: RAG-based Chatbot</strong> - Built a full-stack Retrieval-Augmented Generation (RAG) chatbot that ingests documents, URLs, and user inputs to deliver real-time, context-aware responses using vector database retrieval and LLMs.</li>
-        <li><strong>Fleet Management KPI Scorecard Development</strong> - Designed a pipeline to extract and rank KPIs using LLMs and topic modeling.</li>
-        <li><strong>Synthetic Mobility Data Generation</strong> - Developed a CTGAN-based system to generate synthetic mobility data.</li>
-        <li><strong>SCADA</strong> - Implemented a real-time monitoring dashboard for industrial processes.</li>
-        <li><strong>SnapCal</strong> - Built a Flask-based web app to classify food images and estimate calorie content.</li>
-        <li><strong>Inventory Management System</strong> - Developed an inventory tracking system with real-time updates.</li>
-      </ul>
-    </section>
-  );
+    return (
+        <section id="projects">
+            <h2 className="section-title">Projects</h2>
+            
+            <div className="projects-grid">
+                {projectsData.map((project, index) => (
+                    <ProjectCard 
+                        key={index}
+                        name={project.name}
+                        description={project.description}
+                        tech={project.tech}
+                        github={project.github}
+                        live={project.live}
+                    />
+                ))}
+            </div>
+        </section>
+    );
 };
 
 export default Projects;

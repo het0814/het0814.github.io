@@ -6,52 +6,83 @@ import TechnicalSkills from './components/TechnicalSkills';
 import Contact from './components/Contact';
 import './App.css';
 
-// function App() {
-//   return (
-//     <div>
-//       <Hero />
-//       <Experience />
-//       <TechnicalSkills />
-//       <Projects />
-//       <Contact />
-//     </div>
-//   );
-// }
+// Define the navigation items
+const navItems = [
+    { name: 'Experience', ref: 'experienceRef' },
+    { name: 'Skills', ref: 'skillsRef' },
+    { name: 'Projects', ref: 'projectsRef' },
+    { name: 'Contact', ref: 'contactRef' },
+];
 
-// export default App;
 const App = () => {
+    // Refs for smooth scrolling
+    const experienceRef = useRef(null);
+    const skillsRef = useRef(null);
+    const projectsRef = useRef(null);
+    const contactRef = useRef(null); 
 
-  const experienceRef = useRef(null);
-  const skillsRef = useRef(null);
-  const projectsRef = useRef(null);
+    const getRef = (name) => {
+        switch (name) {
+            case 'experienceRef': return experienceRef;
+            case 'skillsRef': return skillsRef;
+            case 'projectsRef': return projectsRef;
+            case 'contactRef': return contactRef;
+            default: return null;
+        }
+    };
 
-  const scrollToSection = (ref) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
-  };
-  return (
-    <div>
-      <nav className="navbar">
-        <ul>
-          <li><button onClick={() => scrollToSection(experienceRef)}>Experience</button></li>
-          <li><button onClick={() => scrollToSection(skillsRef)}>Skills</button></li>
-          <li><button onClick={() => scrollToSection(projectsRef)}>Projects</button></li>
-        </ul>
-      </nav>
-      <div>
-        <Hero />
-      </div>
-      <div ref={experienceRef}>
-        <Experience />
-      </div>
-      <div ref={skillsRef} className="section">
-        <TechnicalSkills />
-      </div>
-      <div ref={projectsRef} className="section">
-        <Projects />
-      </div>
-      <Contact />
-    </div>
-  );
+    const scrollToSection = (refName) => {
+        const ref = getRef(refName);
+        if (ref && ref.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    return (
+        <div className="portfolio-wrapper">
+            
+            {/* Header/Navigation Bar - Sticky */}
+            <header className="portfolio-header">
+                <h1 className="logo-text" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                    Hetkumar Patel
+                </h1>
+                <nav className="navbar-links">
+                    {navItems.map((item) => (
+                        <button 
+                            key={item.name}
+                            onClick={() => scrollToSection(item.ref)}
+                            className="nav-button"
+                        >
+                            {item.name}
+                        </button>
+                    ))}
+                </nav>
+            </header>
+            
+            {/* Main Content Area */}
+            <main>
+                <section className="hero-section">
+                    <Hero />
+                </section>
+
+                <section ref={experienceRef} className="content-section">
+                    <Experience />
+                </section>
+
+                <section ref={skillsRef} className="content-section">
+                    <TechnicalSkills />
+                </section>
+
+                <section ref={projectsRef} className="content-section">
+                    <Projects />
+                </section>
+
+                <section ref={contactRef} className="content-section contact-section">
+                    <Contact />
+                </section>
+            </main>
+        </div>
+    );
 };
 
 export default App;
