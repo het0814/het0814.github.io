@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
@@ -6,7 +6,6 @@ import TechnicalSkills from './components/TechnicalSkills';
 import Contact from './components/Contact';
 import './App.css';
 
-// Define the navigation items
 const navItems = [
     { name: 'Experience', ref: 'experienceRef' },
     { name: 'Skills', ref: 'skillsRef' },
@@ -15,11 +14,27 @@ const navItems = [
 ];
 
 const App = () => {
-    // Refs for smooth scrolling
     const experienceRef = useRef(null);
     const skillsRef = useRef(null);
     const projectsRef = useRef(null);
-    const contactRef = useRef(null); 
+    const contactRef = useRef(null);
+    
+    // Add scroll state
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    // Add scroll listener
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const getRef = (name) => {
         switch (name) {
@@ -41,12 +56,12 @@ const App = () => {
     return (
         <div className="portfolio-wrapper">
             
-            {/* Header/Navigation Bar - Sticky */}
-            <header className="portfolio-header">
+            {/* Add isScrolled class conditionally */}
+            <header className={`portfolio-header ${isScrolled ? 'scrolled' : ''}`}>
                 <h1 className="logo-text" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                     <strong style={{color : "#FFD700"}}>Het</strong>kumar Patel
                 </h1>
-                <nav className="navbar-links">
+                <nav className={`navbar-links ${isScrolled ? 'visible' : 'hidden'}`}>
                     {navItems.map((item) => (
                         <button 
                             key={item.name}
@@ -59,7 +74,6 @@ const App = () => {
                 </nav>
             </header>
             
-            {/* Main Content Area */}
             <main>
                 <section className="hero-section">
                     <Hero />
