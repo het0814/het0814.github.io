@@ -1,75 +1,86 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
 const experienceData = [
-    {
-        title: "Artificial Intelligence Researcher (Part-Time)",
-        company: "Sheridan College, Centre for Applied AI (CAAI)",
-        dates: "September 2024 – April 2025",
-        description: [
-            "Led research and development for AI/ML-based pipelines for fleet management.",
-            "Worked with LLM (Large Language Models) to design a KPI scorecard system for fleet management based on industrial documents.",
-            "Used BERTopic for advanced topic modeling and analysis of key insights from fleet-related reports.",
-            "Conducted extensive research by reviewing academic papers, industry standards, and emerging tools in AI/ML.",
-            "Worked on code, prompts, and workflows to test and validate approaches, ensuring project goals were met with quality results.",
-            "Regularly communicated and presented project progress, findings, and outcomes to industry partners, ensuring alignment with business goals and collaboration."
-        ]
-    },
-    {
-        title: "AI/ML Software Developer (CO-OP)",
-        company: "Naryant, Centre for Applied AI (CAAI)",
-        dates: "May 2024 – September 2024",
-        description: [
-            "Built a CTGAN-based synthetic data generation pipeline for SUMO mobility simulations, enhancing dataset availability and realism for transportation studies.",
-            "Designed, trained, and optimized machine learning models for transportation mode detection, achieving 92% improvement in classification accuracy.",
-            "Collaborated closely with stakeholders to translate project requirements into actionable technical solutions, ensuring project alignment and success.",
-            "Utilized Python (Pandas, Scikit-learn, TensorFlow), SUMO, and CTGAN (Generative AI Model) frameworks to deliver powerful and scalable models."
-        ]
-    },
-    {
-        title: "IIot Developer (CO-OP)",
-        company: "MAGNA INTERNATIONAL",
-        dates: "May 2023 – February 2024",
-        description: [
-            "Created Web Pages in ignition software for maintenance department to monitor various machinery status and detect faults.",
-            "Modified PLC programs to retrieve live data from PLC, integrating them seamlessly into different visualization components for efficient data analysis.",
-            "Successfully reduced troubleshooting time by 85% and increased monitoring accuracy by 97% through strategic improvements in processes and technology.",
-            "Used python scripts to filter data appropriately to fit them into different graphs.",
-            "Associated in team environment to maintain high levels of productivity.",
-            "Communicated regularly with management to provide feedback and updates."
-        ]
-    }
+  {
+    title: "Artificial Intelligence Researcher",
+    type: "Part-Time",
+    company: "Sheridan College, Centre for Applied AI (CAAI)",
+    dates: "Sep 2024 — Apr 2025",
+    description: [
+      "Led R&D for AI/ML-based pipelines for fleet management systems",
+      "Designed KPI scorecard systems using LLMs for industrial document analysis",
+      "Applied BERTopic for advanced topic modeling and insight extraction",
+      "Conducted extensive research reviewing academic papers and industry standards",
+      "Presented findings and progress to industry partners regularly",
+    ]
+  },
+  {
+    title: "AI/ML Software Developer",
+    type: "CO-OP",
+    company: "Naryant, Centre for Applied AI (CAAI)",
+    dates: "May 2024 — Sep 2024",
+    description: [
+      "Built CTGAN-based synthetic data generation pipeline for SUMO mobility simulations",
+      "Designed and optimized ML models achieving 92% improvement in classification accuracy",
+      "Collaborated with stakeholders to translate requirements into technical solutions",
+      "Utilized Python (Pandas, Scikit-learn, TensorFlow), SUMO, and CTGAN frameworks",
+    ]
+  },
+  {
+    title: "IIoT Developer",
+    type: "CO-OP",
+    company: "Magna International",
+    dates: "May 2023 — Feb 2024",
+    description: [
+      "Created monitoring dashboards in Ignition for real-time machinery status tracking",
+      "Modified PLC programs for live data retrieval and visualization integration",
+      "Reduced troubleshooting time by 85% and increased monitoring accuracy by 97%",
+      "Developed Python scripts for data filtering and visualization pipelines",
+    ]
+  }
 ];
 
-const ExperienceItem = ({ title, company, dates, description }) => (
-    <div className="experience-item">
-        <div className="item-header">
-            <h3 className="job-title">{title}</h3>
-            <p className="job-company">{company}</p>
-        </div>
-        <p className="job-dates">{dates}</p>
-        <ul className="job-description-list">
-            {description.map((point, index) => (
-                <li key={index} className="description-point">{point}</li>
-            ))}
-        </ul>
-    </div>
-);
-
 const Experience = () => {
-    return (
-        <section id="experience">
-            <h2 className="section-title">Experience</h2>
-            <div className="experience-timeline">
-                {experienceData.map((job, index) => (
-                    <ExperienceItem 
-                        key={index}
-                        title={job.title}
-                        company={job.company}
-                        dates={job.dates}
-                        description={job.description}
-                    />
-                ))}
+  return (
+    <div className="section-container">
+      <motion.div
+        className="section-header"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.6 }}
+      >
+        <p className="section-label">02. Experience</p>
+        <h2 className="section-title">Where I've worked</h2>
+      </motion.div>
+
+      <div className="experience-list">
+        {experienceData.map((job, index) => (
+          <motion.div
+            key={index}
+            className="experience-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <div className="experience-card-header">
+              <h3 className="experience-role">
+                {job.title} <span className="at-company">@ {job.company}</span>
+              </h3>
+              <span className="experience-dates">{job.dates}</span>
             </div>
-        </section>
-    );
+            <ul className="experience-bullets">
+              {job.description.map((point, i) => (
+                <li key={i}>{point}</li>
+              ))}
+            </ul>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Experience;

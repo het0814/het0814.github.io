@@ -1,134 +1,149 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faFilePdf } from '@fortawesome/free-solid-svg-icons';
-import DPImage from '../images/DPImage.png'; // Make sure this path is correct!
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import HeroScene from './HeroScene';
 
 const Hero = () => {
-    const [text, setText] = useState('');
-    const [showCursor, setShowCursor] = useState(true);
-    const sentences = [
-        "Honours Bachelor of Computer Science",
-        "Specialty in Data Analytics",
-        "Passionate about Data Science",
-        "Machine Learning Developer",
-        "Experienced in Full-Stack Development",
-        "Building innovative solutions",
-    ];
-    // Using CSS variables for consistent theming
-    const colors = [
-        'var(--accent-gold)', 
-        '#00ffcc', 
-        '#ff00ff', 
-        '#00ffff', 
-        '#ff6600', 
-        '#cc00ff', 
-    ]; 
-    const typingSpeed = 100;
-    const sentencePause = 1000; 
-    
-    const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0); 
+  const [typedText, setTypedText] = useState('');
+  const [sentenceIndex, setSentenceIndex] = useState(0);
 
-    useEffect(() => {
-        let sentenceIndex = 0;
-        let charIndex = 0;
-        let currentText = '';
-        let typingTimeout;
-        let pauseTimeout;
+  const sentences = [
+    "AI/ML Developer",
+    "Data Science Enthusiast",
+    "Full-Stack Engineer",
+    "Machine Learning Researcher",
+  ];
 
-        const typeSentence = () => {
-            if (charIndex < sentences[sentenceIndex].length) {
-                currentText += sentences[sentenceIndex][charIndex];
-                setText(currentText);
-                charIndex++;
-                typingTimeout = setTimeout(typeSentence, typingSpeed);
-            } else {
-                pauseTimeout = setTimeout(() => {
-                    charIndex = 0;
-                    currentText = '';
-                    setText('');
-                    sentenceIndex = (sentenceIndex + 1) % sentences.length;
-                    setCurrentSentenceIndex(sentenceIndex);
-                    typingTimeout = setTimeout(typeSentence, typingSpeed);
-                }, sentencePause);
-            }
-        };
+  useEffect(() => {
+    let charIdx = 0;
+    let isDeleting = false;
+    let timeout;
 
-        typeSentence();
+    const type = () => {
+      const current = sentences[sentenceIndex];
+      if (!isDeleting) {
+        setTypedText(current.substring(0, charIdx + 1));
+        charIdx++;
+        if (charIdx === current.length) {
+          timeout = setTimeout(() => {
+            isDeleting = true;
+            type();
+          }, 2000);
+          return;
+        }
+        timeout = setTimeout(type, 80);
+      } else {
+        setTypedText(current.substring(0, charIdx - 1));
+        charIdx--;
+        if (charIdx === 0) {
+          isDeleting = false;
+          setSentenceIndex((prev) => (prev + 1) % sentences.length);
+          return;
+        }
+        timeout = setTimeout(type, 40);
+      }
+    };
 
-        return () => {
-            clearTimeout(typingTimeout);
-            clearTimeout(pauseTimeout);
-        };
-    }, []);
+    type();
+    return () => clearTimeout(timeout);
+  }, [sentenceIndex]);
 
-    useEffect(() => {
-        const cursorInterval = setInterval(() => {
-            setShowCursor((prev) => !prev);
-        }, 500);
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.12, delayChildren: 0.3 }
+    }
+  };
 
-        return () => clearInterval(cursorInterval);
-    }, []);
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] }
+    }
+  };
 
-    return (
-        <section id="hero" className="hero-container">
-            <div className="hero-image-wrapper">
-                <img 
-                    src={DPImage} 
-                    alt="Hetkumar Patel Profile"
-                    className="hero-dp-image" 
-                />
-            </div>
+  return (
+    <section className="hero-section" id="hero">
+      {/* Background elements */}
+      <div className="hero-grid-bg" />
+      <div className="hero-ambient" />
 
-            <h1 className="hero-title"> 
-                Hetkumar Patel
-            </h1>
-            
-            <h2 className="hero-specialty" style={{ color: colors[currentSentenceIndex % colors.length] }}>
-                {text}
-                {showCursor && <span className="cursor">|</span>}
-            </h2>
-            
-            <div className="hero-bio">
-                <p style={{color : "#A9A9A9"}}>
-                  Hi,this is <strong style={{color : "white"}}>Het.</strong><br></br>
-                  I'm a dedicated and skilled <strong style={{color : "white"}}>Computer Science</strong> recent graduate with specialization in Data Analytics.<br></br> 
-                  With a strong foundation in <strong style={{color : "white"}}>programming, data analysis, </strong>and <strong style={{color : "white"}}>machine learning</strong>.<br></br>
-                  I am passionate about leveraging technology to solve complex problems and drive data-driven decisions.
-                </p>
-            </div>
-            
-            <div className="hero-actions">
-                <a 
-                    href="Resume.pdf"
+      {/* 3D Model */}
+      <Suspense fallback={null}>
+        <HeroScene />
+      </Suspense>
 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="cta-button primary-cta"
-                >  
-                    <FontAwesomeIcon icon={faFilePdf} style={{ marginRight: '8px' }} />
-                    View Resume
-                </a>
-                
-                <a 
-                    href="mailto:hetkumar.patel1403@gmail.com" 
-                    className="cta-button secondary-cta"
-                >
-                    <FontAwesomeIcon icon={faEnvelope} style={{ marginRight: '8px' }} />
-                    Get in Touch
-                </a>
-            </div>
+      <motion.div
+        className="hero-content"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.p className="hero-greeting" variants={itemVariants}>
+          Hi, my name is
+        </motion.p>
 
-            <div className="hero-social-links">
-                <a href="https://linkedin.com/in/h3t08" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-icon">
-                    <FontAwesomeIcon icon={faLinkedin} />
-                </a>
-                <a href="https://github.com/het0814" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="social-icon">
-                    <FontAwesomeIcon icon={faGithub} />
-                </a>
-            </div>
-        </section>
-    );
+        <motion.h1 className="hero-name" variants={itemVariants}>
+          Het Patel<span className="hero-name-accent">.</span>
+        </motion.h1>
+
+        <motion.h2 className="hero-tagline" variants={itemVariants}>
+          I build things with data & code.
+        </motion.h2>
+
+        <motion.div className="hero-typing-wrapper" variants={itemVariants}>
+          <p className="hero-typing">
+            {'> '}<span className="typed-text">{typedText}</span>
+            <span className="cursor-blink">|</span>
+          </p>
+        </motion.div>
+
+        <motion.p className="hero-description" variants={itemVariants}>
+          I'm a <strong>Computer Science</strong> graduate specializing in{' '}
+          <strong>Data Analytics</strong>, passionate about leveraging{' '}
+          <strong>AI and machine learning</strong> to solve complex problems 
+          and drive data-driven decisions.
+        </motion.p>
+
+        <motion.div className="hero-cta-group" variants={itemVariants}>
+          <a
+            href="mailto:hetkumar.patel1403@gmail.com"
+            className="btn-primary"
+          >
+            <FontAwesomeIcon icon={faEnvelope} />
+            Get in Touch
+          </a>
+          <a
+            href="Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+          >
+            View Resume
+          </a>
+        </motion.div>
+
+        <motion.div className="hero-social-links" variants={itemVariants}>
+          <a href="https://github.com/het0814" target="_blank" rel="noopener noreferrer" className="hero-social-link" aria-label="GitHub">
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+          <a href="https://linkedin.com/in/h3t08" target="_blank" rel="noopener noreferrer" className="hero-social-link" aria-label="LinkedIn">
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <div className="scroll-indicator">
+        <span>scroll</span>
+        <div className="scroll-indicator-line" />
+      </div>
+    </section>
+  );
 };
 
 export default Hero;

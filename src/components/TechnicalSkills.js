@@ -1,64 +1,82 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
 const skillsData = [
-    { 
-        category: "Programming Languages", 
-        list: ["Python", "R", "C", "C++", "C#", "JavaScript"] 
-    },
-    { 
-        category: "AI & Machine Learning", 
-        list: ["LLMs", "NLP", "BERTopic", "TensorFlow", "PyTorch"] 
-    },
-    { 
-        category: "Data Analysis & Visualization", 
-        list: ["Power BI", "Tableau", "Pandas", "Matplotlib", "MS Excel"] 
-    },
-    { 
-        category: "Big Data & Databases", 
-        list: ["Hadoop", "Apache Spark", "MongoDB", "MySQL", "NoSQL", "SQLite"] 
-    },
-    { 
-        category: "Automation & Cloud", 
-        list: ["Ignition Automation", "AWS", "GCP"] 
-    },
-    { 
-        category: "DevOps & Version Control", 
-        list: ["Git", "Bitbucket", "Docker", "CI/CD"] 
-    },
-    { 
-        category: "Web Development", 
-        list: ["HTML", "CSS", "JavaScript", "ASP.NET", "Flask", "Spring Boot"] 
-    },
-    { 
-        category: "Other Skills", 
-        list: ["Project Management", "IT Operations", "Process Mapping"] 
-    },
+  {
+    category: "Programming Languages",
+    list: ["Python", "R", "C", "C++", "C#", "JavaScript"]
+  },
+  {
+    category: "AI & Machine Learning",
+    list: ["LLMs", "NLP", "BERTopic", "TensorFlow", "PyTorch", "Scikit-learn"]
+  },
+  {
+    category: "Data & Visualization",
+    list: ["Power BI", "Tableau", "Pandas", "Matplotlib", "MS Excel"]
+  },
+  {
+    category: "Big Data & Databases",
+    list: ["Hadoop", "Apache Spark", "MongoDB", "MySQL", "NoSQL", "SQLite"]
+  },
+  {
+    category: "Cloud & DevOps",
+    list: ["AWS", "GCP", "Docker", "Git", "CI/CD", "Bitbucket"]
+  },
+  {
+    category: "Web Development",
+    list: ["React", "HTML/CSS", "Flask", "ASP.NET", "Spring Boot", "Node.js"]
+  },
 ];
 
-const SkillCard = ({ category, list }) => (
-    <div className="skill-card">
-        <h3 className="skill-category">{category}</h3>
-        <div className="skill-tags">
-            {list.map((skill, index) => (
-                <span key={index} className="skill-tag">{skill}</span>
-            ))}
-        </div>
-    </div>
-);
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.08 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] }
+  }
+};
 
 const TechnicalSkills = () => {
   return (
-    <section id="technical-skills">
-      <h2 className="section-title">Technical Skills</h2>
-      
-      <div className="skills-grid">
-        {skillsData.map((skillGroup, index) => (
-            <SkillCard 
-                key={index}
-                category={skillGroup.category}
-                list={skillGroup.list}
-            />
+    <div className="section-container">
+      <motion.div
+        className="section-header"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.6 }}
+      >
+        <p className="section-label">04. Skills</p>
+        <h2 className="section-title">Technologies I work with</h2>
+      </motion.div>
+
+      <motion.div
+        className="skills-categories"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-50px' }}
+      >
+        {skillsData.map((group, index) => (
+          <motion.div key={index} className="skill-group" variants={itemVariants}>
+            <h3 className="skill-group-title">{group.category}</h3>
+            <div className="skill-tags-list">
+              {group.list.map((skill, i) => (
+                <span key={i} className="skill-tag">{skill}</span>
+              ))}
+            </div>
+          </motion.div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </div>
   );
 };
 
