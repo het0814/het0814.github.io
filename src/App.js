@@ -299,7 +299,7 @@ const App = () => {
                 <div className="exp-when">Jan 2026 — Now<span className="loc">Remote</span></div>
                 <div>
                   <div className="exp-role">Software Engineer</div>
-                  <div className="exp-co">Wedge <span className="badge">YC S25 · Part-time</span></div>
+                  <div className="exp-co">Wedge <span className="badge">YC S25</span></div>
                   <ul className="exp-points">
                     <li>Building production AI agents for healthcare — referral intake, follow-up &amp; payer comms.</li>
                     <li>Shipped the <b>Automated Referral System</b>: fax ingestion + Groq LLM extraction → structured Supabase records.</li>
@@ -325,8 +325,8 @@ const App = () => {
               <article className="exp-row reveal">
                 <div className="exp-when">Sep 2024 — Aug 2025<span className="loc">Oakville · Hybrid</span></div>
                 <div>
-                  <div className="exp-role">AI Researcher (Part-time)</div>
-                  <div className="exp-co">Sheridan — Centre for Applied AI</div>
+                  <div className="exp-role">AI Researcher</div>
+                  <div className="exp-co">Sheridan — Centre for Applied AI<span className="badge">Part-time</span></div>
                   <ul className="exp-points">
                     <li>Built an end-to-end ML pipeline for KPI extraction from unstructured docs (RAG + LangChain + vector indexing).</li>
                     <li>Fine-tuned LLMs with LoRA/PEFT; built a BERTopic system enhanced with LLM summaries.</li>
@@ -339,8 +339,8 @@ const App = () => {
               <article className="exp-row reveal">
                 <div className="exp-when">May 2024 — Sep 2024<span className="loc">Oakville · Hybrid</span></div>
                 <div>
-                  <div className="exp-role">AI/ML Developer (Co-op)</div>
-                  <div className="exp-co">Naryant — Centre for Applied AI</div>
+                  <div className="exp-role">AI/ML Developer</div>
+                  <div className="exp-co">Naryant — Centre for Applied AI<span className="badge">Co-op</span></div>
                   <ul className="exp-points">
                     <li>Built a CTGAN synthetic-data pipeline for SUMO mobility simulations.</li>
                     <li>Owned a transportation mode-detection system end-to-end, reaching <b>92% accuracy</b>.</li>
@@ -352,8 +352,8 @@ const App = () => {
               <article className="exp-row reveal">
                 <div className="exp-when">May 2023 — Feb 2024<span className="loc">Milton · On-site</span></div>
                 <div>
-                  <div className="exp-role">IIoT Developer (Co-op)</div>
-                  <div className="exp-co">Magna International</div>
+                  <div className="exp-role">IIoT Developer</div>
+                  <div className="exp-co">Magna International<span className="badge">Co-op</span></div>
                   <ul className="exp-points">
                     <li>Built real-time Ignition dashboards — <b>cut troubleshooting time 85%</b>, improved monitoring accuracy 97%.</li>
                     <li>Updated PLC programs to stream live data into custom visualizations.</li>
