@@ -226,7 +226,7 @@ const App = () => {
             </div>
 
             <div className="hero-bottom reveal" data-d="3">
-              <p className="hero-desc">Applied AI engineer in Toronto working on <b>semantic memory</b>, <b>RAG</b> and <b>voice agents</b> — building <b>Memanto</b> at Moorcheh.ai and healthcare agents at <b>Wedge&nbsp;(YC&nbsp;S25)</b>. Three published papers, GPA 3.7 Honours.</p>
+              <p className="hero-desc">Applied AI engineer in Toronto working on <b>semantic memory</b>, <b>RAG</b> and <b>voice agents</b>. I build <b>Memanto</b> at Moorcheh.ai and healthcare agents at <b>Wedge&nbsp;(YC&nbsp;S25)</b>. Three published papers, GPA 3.7 Honours.</p>
               <div className="hero-cta">
                 <a href="#contact" className="btn btn-fill" data-magnetic="0.3">Get in touch <span className="arr">↗</span></a>
                 <a href={resumeHref} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Résumé</a>
@@ -248,11 +248,11 @@ const App = () => {
             <div className="section-label reveal">01 / About</div>
             <div className="about-grid">
               <div>
-                <p className="about-lead reveal">I'm an AI/ML developer who loves taking systems from <span className="hl">research idea</span> to <span className="hl">production</span> — and proving they work along the way.</p>
+                <p className="about-lead reveal">I'm an AI/ML developer who loves taking systems from <span className="hl">research idea</span> to <span className="hl">production</span>, and proving they work along the way.</p>
                 <div className="about-body reveal" data-d="1">
-                  <p>My work spans <b>LLMs, NLP, agentic systems, semantic memory</b> and AI-based data pipelines. I'm currently leading development of <b>Memanto</b>, an AI memory-layer agent at Moorcheh.ai — building the gateway and evaluation pipeline alongside it — and previously ran large-scale LLM evaluation work at Innodata.</p>
+                  <p>My work spans <b>LLMs, NLP, agentic systems, semantic memory</b> and AI-based data pipelines. I'm currently leading development of <b>Memanto</b>, an AI memory-layer agent at Moorcheh.ai, where I also build the gateway and evaluation pipeline. Before that I ran large-scale LLM evaluation work at Innodata.</p>
                   <p>I recently completed an Honours Bachelor of Computer Science (Data Analytics) at Sheridan College and co-authored three research papers. On the side I build multilingual voice agents, semantic-search products, and contribute to open-source LangChain integrations.</p>
-                  <p>My background spans <b>IIoT, full-stack development and cloud</b> — which makes me a well-rounded problem solver who's comfortable owning a system end-to-end.</p>
+                  <p>My background spans <b>IIoT, full-stack development and cloud</b>, so I'm comfortable owning a system end-to-end.</p>
                 </div>
               </div>
               <aside className="about-card reveal" data-d="1">
@@ -277,18 +277,18 @@ const App = () => {
                 <div className="section-label">02 / Experience</div>
                 <h2 className="section-title">Where I've worked</h2>
               </div>
-              <div className="aside">6 roles · 2023 — present</div>
+              <div className="aside">6 roles · 2023 – present</div>
             </div>
 
             <div className="exp-list">
               <article className="exp-row reveal">
-                <div className="exp-when">Jan 2026 — Now<span className="loc">San Francisco · Remote</span></div>
+                <div className="exp-when">Jan 2026 – Now<span className="loc">San Francisco · Remote</span></div>
                 <div>
                   <div className="exp-role">AI Engineer</div>
                   <div className="exp-co">Wedge <span className="badge">YC S25</span></div>
                   <ul className="exp-points">
                     <li>Lead production LLM agents for healthcare, live with <b>3 clinical providers</b> on real patient data (<b>250–300 referrals/mo</b>) in a HIPAA-sensitive environment; direct 2 interns.</li>
-                    <li>Shipped the <b>Automated Referral System</b> end-to-end — <b>cut manual work 90%</b>, saving <b>20+ hrs/week</b>: fax ingestion + LLM parsing (Groq + pdfplumber) → structured Supabase records, triage agent &amp; UI.</li>
+                    <li>Shipped the <b>Automated Referral System</b> end-to-end, cutting manual work <b>90%</b> and saving <b>20+ hrs/week</b>: fax ingestion + LLM parsing (Groq + pdfplumber) → structured Supabase records, triage agent &amp; UI.</li>
                     <li>Built an <b>outbound voice agent</b> on LiveKit (Deepgram + ElevenLabs + OpenAI) that autonomously calls payers for verification &amp; prior-auth, tuned for low-latency turn-taking.</li>
                   </ul>
                 </div>
@@ -296,12 +296,12 @@ const App = () => {
               </article>
 
               <article className="exp-row reveal">
-                <div className="exp-when">Feb 2026 — Now<span className="loc">Toronto · Remote</span></div>
+                <div className="exp-when">Feb 2026 – Now<span className="loc">Toronto · Remote</span></div>
                 <div>
                   <div className="exp-role">AI Software Developer</div>
                   <div className="exp-co">Moorcheh.ai <span className="badge">Full-time</span></div>
                   <ul className="exp-points">
-                    <li>Built &amp; shipped <b>Memanto</b>, an AI memory agent, end-to-end on Moorcheh's architecture — <b>18K PySDK downloads</b>; co-authored the arXiv paper on its typed semantic memory.</li>
+                    <li>Built &amp; shipped <b>Memanto</b>, an AI memory agent, end-to-end on Moorcheh's architecture, now at <b>18K PySDK downloads</b>; co-authored the arXiv paper on its typed semantic memory.</li>
                     <li>Maintain the open-source repo (<b>1.8K stars, 604 forks, 200+ PRs</b>), engineering the core memory pipeline on RAG semantic search, exposed as a first-class tool over MCP.</li>
                     <li>Tuned retrieval, latency &amp; reliability to <b>87.1 on LoCoMo</b> and <b>89.8 on LongEval</b>; shipped the Next.js landing + MDX docs sites.</li>
                   </ul>
@@ -310,7 +310,7 @@ const App = () => {
               </article>
 
               <article className="exp-row reveal">
-                <div className="exp-when">Jan 2026 — Mar 2026<span className="loc">Toronto · Remote</span></div>
+                <div className="exp-when">Jan 2026 – Mar 2026<span className="loc">Toronto · Remote</span></div>
                 <div>
                   <div className="exp-role">Gen AI Associate</div>
                   <div className="exp-co">Innodata Inc. <span className="badge">Freelance</span></div>
@@ -323,10 +323,10 @@ const App = () => {
               </article>
 
               <article className="exp-row reveal">
-                <div className="exp-when">Sep 2024 — Aug 2025<span className="loc">Oakville · Hybrid</span></div>
+                <div className="exp-when">Sep 2024 – Aug 2025<span className="loc">Oakville · Hybrid</span></div>
                 <div>
                   <div className="exp-role">AI Researcher</div>
-                  <div className="exp-co">Sheridan — Centre for Applied AI<span className="badge">Part-time</span></div>
+                  <div className="exp-co">Sheridan, Centre for Applied AI<span className="badge">Part-time</span></div>
                   <ul className="exp-points">
                     <li>Built an end-to-end ML pipeline for KPI extraction from unstructured docs (RAG + LangChain + vector indexing).</li>
                     <li>Fine-tuned LLMs with LoRA/PEFT; built a BERTopic system enhanced with LLM summaries.</li>
@@ -337,10 +337,10 @@ const App = () => {
               </article>
 
               <article className="exp-row reveal">
-                <div className="exp-when">May 2024 — Sep 2024<span className="loc">Oakville · Hybrid</span></div>
+                <div className="exp-when">May 2024 – Sep 2024<span className="loc">Oakville · Hybrid</span></div>
                 <div>
                   <div className="exp-role">AI/ML Developer</div>
-                  <div className="exp-co">Naryant — Centre for Applied AI<span className="badge">Co-op</span></div>
+                  <div className="exp-co">Naryant, Centre for Applied AI<span className="badge">Co-op</span></div>
                   <ul className="exp-points">
                     <li>Built a CTGAN synthetic-data pipeline for SUMO mobility simulations.</li>
                     <li>Owned a transportation mode-detection system end-to-end, reaching <b>92% accuracy</b>.</li>
@@ -350,12 +350,12 @@ const App = () => {
               </article>
 
               <article className="exp-row reveal">
-                <div className="exp-when">May 2023 — Feb 2024<span className="loc">Milton · On-site</span></div>
+                <div className="exp-when">May 2023 – Feb 2024<span className="loc">Milton · On-site</span></div>
                 <div>
                   <div className="exp-role">IIoT Developer</div>
                   <div className="exp-co">Magna International<span className="badge">Co-op</span></div>
                   <ul className="exp-points">
-                    <li>Built real-time Ignition dashboards — <b>cut troubleshooting time 85%</b>, improved monitoring accuracy 97%.</li>
+                    <li>Built real-time Ignition dashboards that <b>cut troubleshooting time 85%</b> and improved monitoring accuracy 97%.</li>
                     <li>Updated PLC programs to stream live data into custom visualizations.</li>
                   </ul>
                 </div>
@@ -373,39 +373,39 @@ const App = () => {
                 <div className="section-label">03 / Selected Work</div>
                 <h2 className="section-title">Things I've shipped</h2>
               </div>
-              <div className="aside">{'// 2023 — 2026'}</div>
+              <div className="aside">{'// 2023 – 2026'}</div>
             </div>
 
             <div className="work-grid">
               {/* featured */}
               <article className="work-card feat col-7 reveal">
-                <a className="go" href="https://arxiv.org/abs/2604.22085" target="_blank" rel="noopener noreferrer" aria-label="arXiv">↗</a>
-                <span className="pn">001 — Moorcheh.ai</span>
-                <h3>Memanto — AI Memory Layer</h3>
-                <p>Production memory layer for AI agents — <b>1.8K stars, 604 forks, 18K PySDK downloads</b>. Persists &amp; retrieves context across sessions via Moorcheh's RAG semantic search, exposed as a first-class tool over MCP for multi-agent workflows. Scores <b>87.1 on LoCoMo</b> and <b>89.8 on LongEval</b>; co-authored arXiv paper, 2026.</p>
+                <a className="go" href="https://github.com/moorcheh-ai/memanto" target="_blank" rel="noopener noreferrer" aria-label="GitHub">↗</a>
+                <span className="pn">001 / Moorcheh.ai</span>
+                <h3>Memanto: AI Memory Layer</h3>
+                <p>Production memory layer for AI agents, with <b>1.8K stars, 604 forks and 18K PySDK downloads</b>. Persists &amp; retrieves context across sessions via Moorcheh's RAG semantic search, exposed as a first-class tool over MCP for multi-agent workflows. Scores <b>87.1 on LoCoMo</b> and <b>89.8 on LongEval</b>; co-authored arXiv paper, 2026.</p>
                 <div className="stack"><span className="chip">Python</span><span className="chip">FastAPI</span><span className="chip">Pydantic</span><span className="chip">MCP</span><span className="chip">CrewAI</span><span className="chip">Moorcheh SDK</span></div>
               </article>
 
               {/* metric: Magna */}
               <article className="metric-card col-5 reveal" data-d="1" data-count="85">
-                <span className="pn">002 — Magna International</span>
+                <span className="pn">002 / Magna International</span>
                 <div>
                   <div className="num"><span className="n">0</span><span className="pct">%</span></div>
-                  <p className="mlab"><b>Reduction in troubleshooting time</b> with real-time IIoT SCADA dashboards — plus 97% better monitoring accuracy.</p>
+                  <p className="mlab"><b>Reduction in troubleshooting time</b> with real-time IIoT SCADA dashboards, plus 97% better monitoring accuracy.</p>
                 </div>
               </article>
 
               {/* voice agent */}
               <article className="work-card col-4 reveal">
-                <span className="pn">003 — Wedge · YC S25</span>
+                <span className="pn">003 / Wedge · YC S25</span>
                 <h3>Insurance Voice Agent</h3>
-                <p>Outbound LiveKit agent that autonomously calls payers for verification &amp; prior-auth — Deepgram STT, ElevenLabs TTS, low-latency turn-taking over Twilio.</p>
+                <p>Outbound LiveKit agent that autonomously calls payers for verification &amp; prior-auth. Deepgram STT, ElevenLabs TTS, low-latency turn-taking over Twilio.</p>
                 <div className="stack"><span className="chip">LiveKit</span><span className="chip">Deepgram</span><span className="chip">OpenAI</span></div>
               </article>
 
               {/* referral */}
               <article className="work-card col-4 reveal" data-d="1">
-                <span className="pn">004 — Wedge · YC S25</span>
+                <span className="pn">004 / Wedge · YC S25</span>
                 <h3>Automated Referral System</h3>
                 <p><b>Cut manual work 90%</b> (20+ hrs/week) across 3 clinics: fax ingestion + LLM extraction (Groq + pdfplumber) → structured Supabase referrals, triage agent &amp; scheduled follow-up.</p>
                 <div className="stack"><span className="chip">FastAPI</span><span className="chip">Supabase</span><span className="chip">Groq</span></div>
@@ -414,7 +414,7 @@ const App = () => {
               {/* contextiq */}
               <article className="work-card col-4 reveal" data-d="2">
                 <a className="go" href="https://github.com/het0814/ContextIQ-rag-chatbot" target="_blank" rel="noopener noreferrer" aria-label="GitHub">↗</a>
-                <span className="pn">005 — Production RAG</span>
+                <span className="pn">005 / Production RAG</span>
                 <h3>ContextIQ</h3>
                 <p>End-to-end RAG with hybrid vector search (Pinecone + pgvector), re-ranking, query rewriting &amp; groundedness scoring.</p>
                 <div className="stack"><span className="chip">LangChain</span><span className="chip">Pinecone</span><span className="chip">Docker</span></div>
@@ -422,7 +422,7 @@ const App = () => {
 
               {/* metric: Naryant */}
               <article className="metric-card col-4 reveal" data-count="92">
-                <span className="pn">006 — Naryant</span>
+                <span className="pn">006 / Naryant</span>
                 <div>
                   <div className="num"><span className="n">0</span><span className="pct">%</span></div>
                   <p className="mlab"><b>Classification accuracy</b> on a transportation mode-detection system, owned end-to-end.</p>
@@ -431,16 +431,16 @@ const App = () => {
 
               {/* restro */}
               <article className="work-card col-4 reveal" data-d="1">
-                <span className="pn">007 — Personal</span>
-                <h3>Restro — Voice IVR</h3>
-                <p>Real-time multilingual restaurant agent (English, Hindi, Gujarati, Punjabi) — SIP ingress, streaming STT, low-latency TTS.</p>
+                <span className="pn">007 / Personal</span>
+                <h3>Restro: Voice IVR</h3>
+                <p>Real-time multilingual restaurant agent (English, Hindi, Gujarati, Punjabi) with SIP ingress, streaming STT and low-latency TTS.</p>
                 <div className="stack"><span className="chip">LiveKit</span><span className="chip">Claude</span><span className="chip">Cartesia</span></div>
               </article>
 
               {/* fairlens */}
               <article className="work-card col-4 reveal" data-d="2">
                 <a className="go" href="https://github.com/het0814/Fairlens" target="_blank" rel="noopener noreferrer" aria-label="GitHub">↗</a>
-                <span className="pn">008 — AI for Good</span>
+                <span className="pn">008 / AI for Good</span>
                 <h3>FairLens</h3>
                 <p>AI hiring tool that anonymizes résumés, runs NLP bias detection &amp; visualizes diversity metrics in a live dashboard.</p>
                 <div className="stack"><span className="chip">Flask</span><span className="chip">Dash</span><span className="chip">GPT-4o</span></div>
@@ -532,8 +532,8 @@ const App = () => {
             <div className="edu-grid">
               <div className="edu-card reveal">
                 <div className="edu-deg">Honours Bachelor of Computer Science <span style={{ color: 'var(--clay)' }}>(Data Analytics)</span></div>
-                <div className="edu-school">Sheridan College — Ontario, Canada</div>
-                <div className="edu-when">Jan 2022 — Apr 2025</div>
+                <div className="edu-school">Sheridan College · Ontario, Canada</div>
+                <div className="edu-when">Jan 2022 – Apr 2025</div>
                 <div className="edu-stats">
                   <div className="s"><div className="v">3.7</div><div className="l">GPA · Honours</div></div>
                   <div className="s"><div className="v">2</div><div className="l">papers published</div></div>
@@ -550,7 +550,7 @@ const App = () => {
                 <div className="cert"><span className="cn">OCI Generative AI Professional</span><span className="ci">Oracle · 25</span></div>
                 <div className="cert"><span className="cn">OCI Data Science Professional</span><span className="ci">Oracle · 25</span></div>
                 <div className="cert"><span className="cn">GitHub Foundations</span><span className="ci">Microsoft · 25</span></div>
-                <div className="cert-more">+ 6 more — Cisco, Databricks, MongoDB, AWS, Postman</div>
+                <div className="cert-more">+ 6 more: Cisco, Databricks, MongoDB, AWS, Postman</div>
               </div>
             </div>
           </div>
