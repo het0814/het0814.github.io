@@ -226,7 +226,7 @@ const App = () => {
             </div>
 
             <div className="hero-bottom reveal" data-d="3">
-              <p className="hero-desc">ML software developer in Toronto working on <b>semantic memory</b>, <b>RAG</b> and <b>voice agents</b> — building <b>Memanto</b> at Moorcheh.ai and healthcare agents at <b>Wedge&nbsp;(YC&nbsp;S25)</b>. Two published papers, GPA 3.7 Honours.</p>
+              <p className="hero-desc">Applied AI engineer in Toronto working on <b>semantic memory</b>, <b>RAG</b> and <b>voice agents</b> — building <b>Memanto</b> at Moorcheh.ai and healthcare agents at <b>Wedge&nbsp;(YC&nbsp;S25)</b>. Three published papers, GPA 3.7 Honours.</p>
               <div className="hero-cta">
                 <a href="#contact" className="btn btn-fill" data-magnetic="0.3">Get in touch <span className="arr">↗</span></a>
                 <a href={resumeHref} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Résumé</a>
@@ -250,8 +250,8 @@ const App = () => {
               <div>
                 <p className="about-lead reveal">I'm an AI/ML developer who loves taking systems from <span className="hl">research idea</span> to <span className="hl">production</span> — and proving they work along the way.</p>
                 <div className="about-body reveal" data-d="1">
-                  <p>My work spans <b>LLMs, NLP, agentic systems, semantic memory</b> and AI-based data pipelines. I'm currently leading development of <b>Memanto</b>, an AI memory-layer agent at Moorcheh.ai — building the gateway and evaluation pipeline alongside it — and contributing to large-scale LLM evaluation work.</p>
-                  <p>I recently completed an Honours Bachelor of Computer Science (Data Analytics) at Sheridan College and co-authored two research papers presented at international conferences. On the side I build multilingual voice agents, semantic-search products, and contribute to open-source LangChain integrations.</p>
+                  <p>My work spans <b>LLMs, NLP, agentic systems, semantic memory</b> and AI-based data pipelines. I'm currently leading development of <b>Memanto</b>, an AI memory-layer agent at Moorcheh.ai — building the gateway and evaluation pipeline alongside it — and previously ran large-scale LLM evaluation work at Innodata.</p>
+                  <p>I recently completed an Honours Bachelor of Computer Science (Data Analytics) at Sheridan College and co-authored three research papers. On the side I build multilingual voice agents, semantic-search products, and contribute to open-source LangChain integrations.</p>
                   <p>My background spans <b>IIoT, full-stack development and cloud</b> — which makes me a well-rounded problem solver who's comfortable owning a system end-to-end.</p>
                 </div>
               </div>
@@ -277,36 +277,36 @@ const App = () => {
                 <div className="section-label">02 / Experience</div>
                 <h2 className="section-title">Where I've worked</h2>
               </div>
-              <div className="aside">7 roles · 2023 — present</div>
+              <div className="aside">6 roles · 2023 — present</div>
             </div>
 
             <div className="exp-list">
               <article className="exp-row reveal">
-                <div className="exp-when">Feb 2026 — Now<span className="loc">Toronto · Remote</span></div>
+                <div className="exp-when">Jan 2026 — Now<span className="loc">San Francisco · Remote</span></div>
                 <div>
-                  <div className="exp-role">Software Developer</div>
-                  <div className="exp-co">Moorcheh.ai <span className="badge">Full-time</span></div>
+                  <div className="exp-role">AI Engineer</div>
+                  <div className="exp-co">Wedge <span className="badge">YC S25</span></div>
                   <ul className="exp-points">
-                    <li>Built &amp; shipped <b>Memanto</b>, an AI memory-layer agent, end-to-end on Moorcheh's architecture.</li>
-                    <li>Built the core memory pipeline on RAG semantic search; integrated via MCP &amp; CrewAI for multi-agent workflows.</li>
-                    <li>Shipped the Memanto landing + MDX docs site (Next.js 16, R3F, Framer Motion).</li>
+                    <li>Lead production LLM agents for healthcare, live with <b>3 clinical providers</b> on real patient data (<b>250–300 referrals/mo</b>) in a HIPAA-sensitive environment; direct 2 interns.</li>
+                    <li>Shipped the <b>Automated Referral System</b> end-to-end — <b>cut manual work 90%</b>, saving <b>20+ hrs/week</b>: fax ingestion + LLM parsing (Groq + pdfplumber) → structured Supabase records, triage agent &amp; UI.</li>
+                    <li>Built an <b>outbound voice agent</b> on LiveKit (Deepgram + ElevenLabs + OpenAI) that autonomously calls payers for verification &amp; prior-auth, tuned for low-latency turn-taking.</li>
                   </ul>
                 </div>
-                <div className="exp-stack"><span className="chip">Python</span><span className="chip">FastAPI</span><span className="chip">MCP</span><span className="chip">CrewAI</span><span className="chip">Next.js</span></div>
+                <div className="exp-stack"><span className="chip">LiveKit</span><span className="chip">FastAPI</span><span className="chip">Supabase</span><span className="chip">Twilio</span><span className="chip">Playwright</span></div>
               </article>
 
               <article className="exp-row reveal">
-                <div className="exp-when">Jan 2026 — Now<span className="loc">Remote</span></div>
+                <div className="exp-when">Feb 2026 — Now<span className="loc">Toronto · Remote</span></div>
                 <div>
-                  <div className="exp-role">Software Engineer</div>
-                  <div className="exp-co">Wedge <span className="badge">YC S25</span></div>
+                  <div className="exp-role">AI Software Developer</div>
+                  <div className="exp-co">Moorcheh.ai <span className="badge">Full-time</span></div>
                   <ul className="exp-points">
-                    <li>Building production AI agents for healthcare — referral intake, follow-up &amp; payer comms.</li>
-                    <li>Shipped the <b>Automated Referral System</b>: fax ingestion + Groq LLM extraction → structured Supabase records.</li>
-                    <li>Built an <b>Insurance Caller voice agent</b> on LiveKit (Deepgram + 11Labs + OpenAI) for prior-auth follow-up.</li>
+                    <li>Built &amp; shipped <b>Memanto</b>, an AI memory agent, end-to-end on Moorcheh's architecture — <b>18K PySDK downloads</b>; co-authored the arXiv paper on its typed semantic memory.</li>
+                    <li>Maintain the open-source repo (<b>1.8K stars, 604 forks, 200+ PRs</b>), engineering the core memory pipeline on RAG semantic search, exposed as a first-class tool over MCP.</li>
+                    <li>Tuned retrieval, latency &amp; reliability to <b>87.1 on LoCoMo</b> and <b>89.8 on LongEval</b>; shipped the Next.js landing + MDX docs sites.</li>
                   </ul>
                 </div>
-                <div className="exp-stack"><span className="chip">LiveKit</span><span className="chip">Supabase</span><span className="chip">Twilio</span><span className="chip">Playwright</span></div>
+                <div className="exp-stack"><span className="chip">Python</span><span className="chip">FastAPI</span><span className="chip">MCP</span><span className="chip">RAG</span><span className="chip">Next.js</span></div>
               </article>
 
               <article className="exp-row reveal">
@@ -382,7 +382,7 @@ const App = () => {
                 <a className="go" href="https://arxiv.org/abs/2604.22085" target="_blank" rel="noopener noreferrer" aria-label="arXiv">↗</a>
                 <span className="pn">001 — Moorcheh.ai</span>
                 <h3>Memanto — AI Memory Layer</h3>
-                <p>Production memory layer for AI agents. Persists &amp; retrieves context across sessions via Moorcheh's RAG semantic search, exposed as a first-class tool over MCP and integrated with CrewAI multi-agent workflows. Co-authored arXiv paper, April 2026.</p>
+                <p>Production memory layer for AI agents — <b>1.8K stars, 604 forks, 18K PySDK downloads</b>. Persists &amp; retrieves context across sessions via Moorcheh's RAG semantic search, exposed as a first-class tool over MCP for multi-agent workflows. Scores <b>87.1 on LoCoMo</b> and <b>89.8 on LongEval</b>; co-authored arXiv paper, 2026.</p>
                 <div className="stack"><span className="chip">Python</span><span className="chip">FastAPI</span><span className="chip">Pydantic</span><span className="chip">MCP</span><span className="chip">CrewAI</span><span className="chip">Moorcheh SDK</span></div>
               </article>
 
@@ -397,19 +397,17 @@ const App = () => {
 
               {/* voice agent */}
               <article className="work-card col-4 reveal">
-                <a className="go" href="#work" aria-label="View">↗</a>
                 <span className="pn">003 — Wedge · YC S25</span>
                 <h3>Insurance Voice Agent</h3>
-                <p>Outbound LiveKit agent calling payers for verification &amp; prior-auth — Deepgram STT, 11Labs TTS, low-latency turn-taking over Twilio.</p>
+                <p>Outbound LiveKit agent that autonomously calls payers for verification &amp; prior-auth — Deepgram STT, ElevenLabs TTS, low-latency turn-taking over Twilio.</p>
                 <div className="stack"><span className="chip">LiveKit</span><span className="chip">Deepgram</span><span className="chip">OpenAI</span></div>
               </article>
 
               {/* referral */}
               <article className="work-card col-4 reveal" data-d="1">
-                <a className="go" href="#work" aria-label="View">↗</a>
                 <span className="pn">004 — Wedge · YC S25</span>
                 <h3>Automated Referral System</h3>
-                <p>Fax ingestion + LLM extraction (Groq + pdfplumber) → structured Supabase referrals, triage agent &amp; scheduled follow-up.</p>
+                <p><b>Cut manual work 90%</b> (20+ hrs/week) across 3 clinics: fax ingestion + LLM extraction (Groq + pdfplumber) → structured Supabase referrals, triage agent &amp; scheduled follow-up.</p>
                 <div className="stack"><span className="chip">FastAPI</span><span className="chip">Supabase</span><span className="chip">Groq</span></div>
               </article>
 
@@ -433,7 +431,6 @@ const App = () => {
 
               {/* restro */}
               <article className="work-card col-4 reveal" data-d="1">
-                <a className="go" href="#work" aria-label="View">↗</a>
                 <span className="pn">007 — Personal</span>
                 <h3>Restro — Voice IVR</h3>
                 <p>Real-time multilingual restaurant agent (English, Hindi, Gujarati, Punjabi) — SIP ingress, streaming STT, low-latency TTS.</p>
